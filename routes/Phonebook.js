@@ -36,7 +36,7 @@ router.patch('/update/:id', async (req,res)=>{
 
 //GET ONE
 router.get('/:id', async(req,res) => {
-    const getSpecificPhoneBook = await Phonebook.findById(req.params.id);
+    const getSpecificPhoneBook = await Phonebook.findById({_id: req.params.id});
     res.json(getSpecificPhoneBook);
 });
 module.exports = router;
