@@ -26,7 +26,7 @@ router.delete('/delete/:id', async (req,res) =>{
 });
 
 //UPDATE
-router.put('/update/:id', async (req,res)=>{
+router.patch('/update/:id', async (req,res)=>{
     const updatePhonebook = await Phonebook.updateOne(
         {_id: req.params.id},
         {$set: req.body}
